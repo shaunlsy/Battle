@@ -1,5 +1,9 @@
-require 'sinatra'
+require 'sinatra/base'
+require 'shotgun'
 
-get '/battle' do
-  "Welcome to the Battle!"
+class Battle < Sinatra::Base
+  get '/' do
+    'Hello Battle!'
+  end
+  run! if app_file ==$0
 end
