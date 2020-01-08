@@ -10,7 +10,7 @@ describe Player do
 
   describe '#dmg' do
     it 'gives damages by 10' do
-      expect(Player::HIT_POINTS).to eq 100
+      expect(Player::DEFAULT_HP).to eq 100
       expect(subject.dmg).to eq 90 
     end
   end
