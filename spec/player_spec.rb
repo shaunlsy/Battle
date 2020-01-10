@@ -17,13 +17,13 @@ describe Player do
     end
 
     it 'gives damages to the player by 10' do
-      expect { shaun.dmg }.to change { shaun.hp }.by(-10)
+      expect { shaun.damage }.to change { shaun.hp }.by(-10)
     end
   end
 
   describe '#attack' do
     it 'attacks player and gives damages' do
-      expect(jake).to receive(:dmg)
+      expect(jake).to receive(:damage)
       shaun.attack(jake)
     end
   end
