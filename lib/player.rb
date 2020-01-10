@@ -1,3 +1,5 @@
+require_relative 'game'
+
 class Player 
   attr_reader :name, :hp 
 
@@ -8,10 +10,6 @@ class Player
     @name = name 
     @hp = hp
   end 
-
-  def attack(player)
-    player.damage
-  end
 
   def damage 
     @hp -= DMG 

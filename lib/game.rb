@@ -1,7 +1,7 @@
 class Game
 
   def attack(player)
-    player.dmg
+    player.damage
   end
 
 end
