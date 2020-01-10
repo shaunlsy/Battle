@@ -11,7 +11,7 @@ class Player
     @hp = hp
   end 
 
-  def damage 
+  def damage
     @hp -= DMG 
   end 
 
