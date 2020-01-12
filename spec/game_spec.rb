@@ -20,4 +20,14 @@ describe Game do
     end
   end
 
+  describe '#switch' do
+    it 'starts with player 1' do
+      expect(game.current_player).to eq shaun
+    end
+    it 'switches turn' do
+      game.switch
+      expect(game.current_player).to eq lucian
+    end
+  end
+
 end

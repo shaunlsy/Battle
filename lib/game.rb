@@ -1,5 +1,5 @@
 class Game
-  attr_reader :players
+  attr_reader :players, :current_player
 
   def initialize(player_1, player_2)
     @players = [player_1, player_2]
@@ -12,6 +12,11 @@ class Game
 
   def player_2
     @players[1]
+  end
+
+  def switch_players
+    switch
+    @current_player = @players[0]
   end
 
   def switch
