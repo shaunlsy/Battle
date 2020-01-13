@@ -5,7 +5,7 @@ describe Battle, type: :feature do
     scenario 'attack Player 2' do
       sign_in_and_play
       click_link 'Attack'
-      expect(page).to have_content 'Alicia attacked Shaun'
+      expect(page).to have_content 'Shaun attacked Alicia'
     end
 
     scenario 'reduce Player 2 HP by 10' do
