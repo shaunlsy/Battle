@@ -25,8 +25,15 @@ describe Game do
       expect(game.current_player).to eq shaun
     end
     it 'switches turn' do
-      game.switch_players
+      game.switch_turns
       expect(game.current_player).to eq lucian
+    end
+  end
+
+  describe '#opponent_of' do
+    it 'finds the opponent fo a player' do
+      expect(game.opponent_of(shaun)).to eq lucian
+      expect(game.opponent_of(lucian)).to eq shaun
     end
   end
 
