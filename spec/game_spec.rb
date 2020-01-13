@@ -13,13 +13,6 @@ describe Game do
     expect(game.player_2).to eq lucian
   end
 
-  describe '#attack' do
-    it 'attacks player and gives damages' do
-      expect(lucian).to receive(:damage)
-      game.attack(lucian) #game.attack instead of player 1 attacks player 2
-    end
-  end
-
   describe '#switch' do
     it 'starts with player 1' do
       expect(game.current_player).to eq shaun

@@ -34,10 +34,6 @@ class Game
     @players.select { |player| player != the_player }.first
   end
 
-  def attack(player)
-    player.damage
-  end
-
   private
   attr_reader :players
 
