@@ -5,7 +5,9 @@
 
 <h3><%= @game.current_player.name %>'s turn</h3>
 
-<a href="/attack">Attack</a>
+<form action="/attack" method="post">
+  <input type="submit" value="Attack">
+</form> 
 
 <!-- <input onclick="this.value='Confirm'" type="button" value="Player 1 Attack!" id="myButton1" />
 <input onclick="this.value='Confirm'" type="button" value="Player 2 Attack!" id="myButton1" /> -->

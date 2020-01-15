@@ -6,6 +6,10 @@ require_relative './lib/attack'
 class Battle < Sinatra::Base
   enable :sessions
 
+  before do
+    @game = Game.instance
+  end
+
   get '/' do 
     erb :index
   end
@@ -13,26 +17,34 @@ class Battle < Sinatra::Base
   post '/names' do
     player_1 = Player.new(params[:player_1])
     player_2 = Player.new(params[:player_2])
-    $game = Game.new(player_1, player_2)
-    # erb :play
+    @game = Game.create(player_1, player_2)
     redirect '/play'
   end
 
   get '/play' do
-    @game = $game
     erb :play
   end
 
-  get '/attack' do
-    @game = $game
-    # @game.attack(@game.player_2)
+  post '/attack' do
     Attack.run(@game.opponent_of(@game.current_player))
+    if @game.game_over?
+      redirect '/game_over'
+    else
+      redirect '/attack'
+    end    
+  end
+
+  get '/attack' do
     erb :attack
   end
 
   post '/switch_attack' do
-    $game.switch_turns
+    @game.switch_turns
     redirect('/play')
+  end
+
+  get '/game_over' do
+    erb :game_over
   end
 
    # start the server if ruby file executed directly

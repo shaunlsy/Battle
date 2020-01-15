@@ -10,4 +10,5 @@ class Attack
   def run
     @player.damage
   end
+  
 end
